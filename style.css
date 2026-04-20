@@ -1,0 +1,548 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg:    #1A1714;
+    --text:  #F5F0E8;
+    --red:   #C4502A;
+    --cream: #F5F0E8;
+    --rust:  #C4502A;
+}
+
+body {
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+}
+
+/* Progress bar */
+#progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--red);
+    width: 0%;
+    transition: width 0.1s ease;
+    z-index: 100;
+}
+
+/* Panel counter */
+#counter {
+    position: fixed;
+    right: 24px;
+    bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.4);
+    z-index: 100;
+}
+
+/* Scroll hint */
+#hint {
+    position: fixed;
+    left: 24px;
+    bottom: 20px;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.2);
+    z-index: 100;
+}
+
+/* Horizontal wrapper */
+.wrapper {
+    display: flex;
+    height: 100vh;
+    will-change: transform;
+}
+
+/* Each panel */
+.panel {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── PANEL 1 — Hero ── */
+.p1 {
+    background: black;
+}
+
+
+.p1 .content {
+    text-align: center;
+    z-index: 1;
+}
+
+.p1 h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 14vw, 200px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+}
+
+.p1 h1 span { color: var(--rust); }
+
+.p1. sub {
+    margin-top: 0.5rem;
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    color: rgba(245,240,232,0.45);
+}
+
+/* ── PANEL 2 — How It Works ── */
+.p2 {
+    background: #141210;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.p2 .label {
+    font-size: 50px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--rust);
+}
+
+.p2 .steps {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.p2 .step { max-width: 180px; }
+
+.p2 .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    color: rgba(245,240,232,0.06);
+}
+
+.p2 .step-title {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+}
+
+.p2 .step-desc {
+    font-size: 12px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.4);
+}
+
+/* ── PANEL 3 — Stats ── */
+.p3 { background: var(--rust); flex-direction: column; gap: 2rem; }
+
+.p3 .tag {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.6);
+}
+
+.p3 .stats {
+    display: flex;
+    gap: 5rem;
+    align-items: baseline;
+}
+
+.p3 .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 8vw, 120px);
+    line-height: 1;
+    color: var(--cream);
+}
+
+.p3 .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.55);
+    margin-top: 0.5rem;
+}
+
+.p3 .divider {
+    width: 1px;
+    height: 80px;
+    background: rgba(245,240,232,0.25);
+    align-self: center;
+}
+
+/* ── PANEL 4 — Quote ── */
+.p4 { background: #F5F0E8; flex-direction: column; gap: 2rem; }
+
+.p4 blockquote {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1.05;
+    color: var(--bg);
+    max-width: 700px;
+    text-align: center;
+}
+
+.p4 blockquote span { color: var(--rust); }
+
+.p4 cite {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(26,23,20,0.35);
+    font-style: normal;
+}
+
+/* ── PANEL 5 — CTA ── */
+.p5 { background: var(--bg); flex-direction: column; gap: 2.5rem; }
+
+.p5 .big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 140px);
+    line-height: 0.95;
+    text-align: center;
+    color: var(--cream);
+}
+
+.p5 .big span { color: var(--rust); }
+
+.p5 .cta-btn {
+    display: inline-block;
+    border: 1px solid rgba(245,240,232,0.3);
+    padding: 14px 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cream);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.p5 .cta-btn:hover {
+    background: var(--rust);
+    border-color: var(--rust);
+}
+
+.p5 .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+            linear-gradient(rgba(245,240,232,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,240,232,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg:    #1A1714;
+    --text:  #F5F0E8;
+    --red:   #C4502A;
+    --cream: #F5F0E8;
+    --rust:  #C4502A;
+}
+
+body {
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+}
+
+/* Progress bar */
+#progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--red);
+    width: 0%;
+    transition: width 0.1s ease;
+    z-index: 100;
+}
+
+/* Panel counter */
+#counter {
+    position: fixed;
+    right: 24px;
+    bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.4);
+    z-index: 100;
+}
+
+/* Scroll hint */
+#hint {
+    position: fixed;
+    left: 24px;
+    bottom: 20px;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.2);
+    z-index: 100;
+}
+
+/* Horizontal wrapper */
+.wrapper {
+    display: flex;
+    height: 100vh;
+    will-change: transform;
+}
+
+/* Each panel */
+.panel {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── PANEL 1 — Hero ── */
+.p1 { background: var(--bg); }
+
+.p1 .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+            linear-gradient(rgba(245,240,232,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,240,232,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.p1 .content {
+    text-align: center;
+    z-index: 1;
+}
+
+.p1 h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 14vw, 200px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+}
+
+.p1 h1 span { color: var(--rust); }
+
+.p1 .sub {
+    margin-top: 2rem;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: rgba(245,240,232,0.45);
+    font-style: italic;
+}
+
+/* ── PANEL 2 — How It Works ── */
+.p2 {
+    background: #141210;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.p2 .label {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--rust);
+}
+
+.p2 .steps {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.p2 .step { max-width: 180px; }
+
+.p2 .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    color: rgba(245,240,232,0.06);
+}
+
+.p2 .step-title {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+}
+
+.p2 .step-desc {
+    font-size: 12px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.4);
+}
+
+/* ── PANEL 3 — Stats ── */
+.p3 { background: var(--rust); flex-direction: column; gap: 2rem; }
+
+.p3 .tag {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.6);
+}
+
+.p3 .stats {
+    display: flex;
+    gap: 5rem;
+    align-items: baseline;
+}
+
+.p3 .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 8vw, 120px);
+    line-height: 1;
+    color: var(--cream);
+}
+
+.p3 .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.55);
+    margin-top: 0.5rem;
+}
+
+.p3 .divider {
+    width: 1px;
+    height: 80px;
+    background: rgba(245,240,232,0.25);
+    align-self: center;
+}
+
+/* ── PANEL 4 — Quote ── */
+.p4 { background: #F5F0E8; flex-direction: column; gap: 2rem; }
+
+.p4 blockquote {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1.05;
+    color: var(--bg);
+    max-width: 700px;
+    text-align: center;
+}
+
+.p4 blockquote span { color: var(--rust); }
+
+.p4 cite {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(26,23,20,0.35);
+    font-style: normal;
+}
+
+/* ── PANEL 5 — CTA ── */
+.p5 { background: var(--bg); flex-direction: column; gap: 2.5rem; }
+
+.p5 .big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 140px);
+    line-height: 0.95;
+    text-align: center;
+    color: var(--cream);
+}
+
+.p5 .big span { color: var(--rust); }
+
+.p5 .cta-btn {
+    display: inline-block;
+    border: 1px solid rgba(245,240,232,0.3);
+    padding: 14px 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cream);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.p5 .cta-btn:hover {
+    background: var(--rust);
+    border-color: var(--rust);
+}
+
+.p5 .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+            linear-gradient(rgba(245,240,232,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,240,232,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+/* ── TABLET (≤ 768px) ── */
+@media (max-width: 768px) {
+    #hint { display: none; }
+
+    /* Panel 1 */
+    .p1 h1 { font-size: clamp(60px, 18vw, 120px); }
+
+    /* Panel 2 — stack steps vertically */
+    .p2 { gap: 2rem; padding: 2rem; }
+    .p2 .steps { flex-direction: column; gap: 2rem; }
+    .p2 .step { max-width: 100%; }
+    .p2 .step-num { font-size: 48px; }
+
+    /* Panel 3 — stack stats vertically */
+    .p3 .stats { flex-direction: column; gap: 1.5rem; align-items: center; }
+    .p3 .divider { width: 60px; height: 1px; }
+    .p3 .stat { text-align: center; }
+    .p3 .stat-num { font-size: clamp(48px, 12vw, 80px); }
+
+    /* Panel 4 */
+    .p4 blockquote { font-size: clamp(28px, 7vw, 48px); padding: 0 1.5rem; }
+
+    /* Panel 5 */
+    .p5 .big { font-size: clamp(48px, 14vw, 100px); }
+    .p5 .cta-btn { padding: 12px 28px; font-size: 10px; }
+}
+
+/* ── MOBILE (≤ 480px) ── */
+@media (max-width: 480px) {
+    /* Panel 1 */
+    .p1 h1 { font-size: clamp(52px, 20vw, 90px); }
+    .p1 .sub { font-size: 11px; margin-top: 1.25rem; }
+
+    /* Panel 2 */
+    .p2 { padding: 1.5rem; gap: 1.5rem; }
+    .p2 .steps { gap: 1.5rem; }
+    .p2 .step-num { font-size: 40px; }
+    .p2 .step-title { font-size: 11px; }
+    .p2 .step-desc { font-size: 11px; }
+
+    /* Panel 3 */
+    .p3 { gap: 1.5rem; }
+    .p3 .stats { gap: 1.25rem; }
+    .p3 .stat-num { font-size: clamp(42px, 14vw, 72px); }
+    .p3 .stat-label { font-size: 10px; letter-spacing: 0.12em; }
+
+    /* Panel 4 */
+    .p4 blockquote { font-size: clamp(24px, 8vw, 40px); padding: 0 1rem; }
+    .p4 cite { font-size: 10px; letter-spacing: 0.2em; }
+
+    /* Panel 5 */
+    .p5 { gap: 2rem; }
+    .p5 .big { font-size: clamp(42px, 16vw, 80px); }
+    .p5 .cta-btn { padding: 12px 24px; letter-spacing: 0.2em; }
+
+    /* Counter */
+    #counter { font-size: 10px; right: 16px; bottom: 14px; }
+}
