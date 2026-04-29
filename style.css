@@ -1,33 +1,39 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-    --bg:    #1A1714;
-    --text:  #F5F0E8;
-    --red:   #C4502A;
-    --cream: #F5F0E8;
-    --rust:  #C4502A;
+/* ── Reset ── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ── Variables ── */
+:root {
+    --bg:    #1A1714;
+    --cream: #F5F0E8;
+    --rust:  #C4502A;
+    --dark:  #141210;
+    --teal:  #2DB8A0;
+}
+
+/* ── Base ── */
 body {
     overflow: hidden;
     background: var(--bg);
-    color: var(--text);
+    color: var(--cream);
     font-family: 'DM Mono', monospace;
 }
 
-/* Progress bar */
+/* ── UI Chrome ── */
 #progress {
     position: fixed;
     bottom: 0;
     left: 0;
     height: 3px;
-    background: var(--red);
     width: 0%;
+    background: var(--rust);
     transition: width 0.1s ease;
     z-index: 100;
 }
 
-/* Panel counter */
 #counter {
     position: fixed;
     right: 24px;
@@ -35,10 +41,10 @@ body {
     font-size: 11px;
     letter-spacing: 0.2em;
     color: rgba(245,240,232,0.4);
+    font-family: 'DM Mono', monospace;
     z-index: 100;
 }
 
-/* Scroll hint */
 #hint {
     position: fixed;
     left: 24px;
@@ -47,17 +53,17 @@ body {
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: rgba(245,240,232,0.2);
+    font-family: 'DM Mono', monospace;
     z-index: 100;
 }
 
-/* Horizontal wrapper */
+/* ── Wrapper & panels ── */
 .wrapper {
     display: flex;
     height: 100vh;
     will-change: transform;
 }
 
-/* Each panel */
 .panel {
     width: 100vw;
     height: 100vh;
@@ -65,16 +71,67 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
     position: relative;
     overflow: hidden;
+}
+
+/* ── Shared components ── */
+.label {
+    font-family: 'DM Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 3rem;
+}
+
+.tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--rust);
+}
+
+.steps {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.step {
+    max-width: 200px;
+    text-align: center;
+}
+
+.step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.step-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+}
+
+.step-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.4);
 }
 
 /* ── PANEL 1 — Hero ── */
 .p1 {
-    background: black;
+    background: var(--bg);
 }
-
 
 .p1 .content {
     text-align: center;
@@ -89,359 +146,125 @@ body {
     color: var(--cream);
 }
 
-.p1 h1 span { color: var(--rust); }
-
-.p1. sub {
-    margin-top: 0.5rem;
-    font-size: 20px;
-    letter-spacing: 0.12em;
-    color: rgba(245,240,232,0.45);
-}
-
-/* ── PANEL 2 — How It Works ── */
-.p2 {
-    background: #141210;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.p2 .label {
-    font-size: 50px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
+.p1 h1 span {
     color: var(--rust);
 }
-
-.p2 .steps {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-start;
-}
-
-.p2 .step { max-width: 180px; }
-
-.p2 .step-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 72px;
-    line-height: 1;
-    color: rgba(245,240,232,0.06);
-}
-
-.p2 .step-title {
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--cream);
-    margin-bottom: 0.75rem;
-}
-
-.p2 .step-desc {
-    font-size: 12px;
-    line-height: 1.8;
-    color: rgba(245,240,232,0.4);
-}
-
-/* ── PANEL 3 — Stats ── */
-.p3 { background: var(--rust); flex-direction: column; gap: 2rem; }
-
-.p3 .tag {
-    font-size: 10px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.6);
-}
-
-.p3 .stats {
-    display: flex;
-    gap: 5rem;
-    align-items: baseline;
-}
-
-.p3 .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(60px, 8vw, 120px);
-    line-height: 1;
-    color: var(--cream);
-}
-
-.p3 .stat-label {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.55);
-    margin-top: 0.5rem;
-}
-
-.p3 .divider {
-    width: 1px;
-    height: 80px;
-    background: rgba(245,240,232,0.25);
-    align-self: center;
-}
-
-/* ── PANEL 4 — Quote ── */
-.p4 { background: #F5F0E8; flex-direction: column; gap: 2rem; }
-
-.p4 blockquote {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 72px);
-    line-height: 1.05;
-    color: var(--bg);
-    max-width: 700px;
-    text-align: center;
-}
-
-.p4 blockquote span { color: var(--rust); }
-
-.p4 cite {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(26,23,20,0.35);
-    font-style: normal;
-}
-
-/* ── PANEL 5 — CTA ── */
-.p5 { background: var(--bg); flex-direction: column; gap: 2.5rem; }
-
-.p5 .big {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(60px, 10vw, 140px);
-    line-height: 0.95;
-    text-align: center;
-    color: var(--cream);
-}
-
-.p5 .big span { color: var(--rust); }
-
-.p5 .cta-btn {
-    display: inline-block;
-    border: 1px solid rgba(245,240,232,0.3);
-    padding: 14px 40px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--cream);
-    transition: background 0.2s, border-color 0.2s;
-}
-
-.p5 .cta-btn:hover {
-    background: var(--rust);
-    border-color: var(--rust);
-}
-
-.p5 .bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-            linear-gradient(rgba(245,240,232,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(245,240,232,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-    --bg:    #1A1714;
-    --text:  #F5F0E8;
-    --red:   #C4502A;
-    --cream: #F5F0E8;
-    --rust:  #C4502A;
-}
-
-body {
-    overflow: hidden;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Mono', monospace;
-}
-
-/* Progress bar */
-#progress {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background: var(--red);
-    width: 0%;
-    transition: width 0.1s ease;
-    z-index: 100;
-}
-
-/* Panel counter */
-#counter {
-    position: fixed;
-    right: 24px;
-    bottom: 20px;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: rgba(245,240,232,0.4);
-    z-index: 100;
-}
-
-/* Scroll hint */
-#hint {
-    position: fixed;
-    left: 24px;
-    bottom: 20px;
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.2);
-    z-index: 100;
-}
-
-/* Horizontal wrapper */
-.wrapper {
-    display: flex;
-    height: 100vh;
-    will-change: transform;
-}
-
-/* Each panel */
-.panel {
-    width: 100vw;
-    height: 100vh;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 60px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* ── PANEL 1 — Hero ── */
-.p1 { background: var(--bg); }
-
-.p1 .bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-            linear-gradient(rgba(245,240,232,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(245,240,232,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-}
-
-.p1 .content {
-    text-align: center;
-    z-index: 1;
-}
-
-.p1 h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(80px, 14vw, 200px);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    color: var(--cream);
-}
-
-.p1 h1 span { color: var(--rust); }
 
 .p1 .sub {
     margin-top: 2rem;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    color: rgba(245,240,232,0.45);
-    font-style: italic;
+    font-family: 'DM Mono', monospace;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.4);
 }
 
-/* ── PANEL 2 — How It Works ── */
+/* ── PANEL 2 — What is it? ── */
 .p2 {
-    background: #141210;
+    background: var(--dark);
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 8vw;
+}
+
+.p2 .definition-block {
+    max-width: 720px;
+    text-align: center;
+}
+
+.p2 .method-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 2.5vw, 32px);
+    letter-spacing: 0.05em;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+}
+
+.p2 .explain {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    line-height: 2;
+    color: rgba(245,240,232,0.4);
+}
+
+/* ── PANEL 3 — How it works ── */
+.p3 {
+    background: var(--dark);
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ── PANEL 4 — Pro tips ── */
+.p4 {
+    background: var(--bg);
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ── PANEL 5 — Stats ── */
+.p5 {
+    background: var(--rust);
     flex-direction: column;
     gap: 3rem;
 }
 
-.p2 .label {
-    font-size: 10px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--rust);
+.p5 .tag {
+    color: rgba(245,240,232,0.7);
 }
 
-.p2 .steps {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-start;
-}
-
-.p2 .step { max-width: 180px; }
-
-.p2 .step-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 72px;
-    line-height: 1;
-    color: rgba(245,240,232,0.06);
-}
-
-.p2 .step-title {
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--cream);
-    margin-bottom: 0.75rem;
-}
-
-.p2 .step-desc {
-    font-size: 12px;
-    line-height: 1.8;
-    color: rgba(245,240,232,0.4);
-}
-
-/* ── PANEL 3 — Stats ── */
-.p3 { background: var(--rust); flex-direction: column; gap: 2rem; }
-
-.p3 .tag {
-    font-size: 10px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.6);
-}
-
-.p3 .stats {
+.p5 .stats {
     display: flex;
     gap: 5rem;
-    align-items: baseline;
+    align-items: center;
 }
 
-.p3 .stat-num {
+.p5 .stat {
+    text-align: center;
+}
+
+.p5 .stat-num {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(60px, 8vw, 120px);
+    font-size: clamp(60px, 8vw, 110px);
     line-height: 1;
     color: var(--cream);
 }
 
-.p3 .stat-label {
+.p5 .stat-label {
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(245,240,232,0.55);
+    color: rgba(245,240,232,0.6);
     margin-top: 0.5rem;
 }
 
-.p3 .divider {
+.p5 .divider {
     width: 1px;
     height: 80px;
-    background: rgba(245,240,232,0.25);
-    align-self: center;
+    background: rgba(245,240,232,0.3);
 }
 
-/* ── PANEL 4 — Quote ── */
-.p4 { background: #F5F0E8; flex-direction: column; gap: 2rem; }
+/* ── PANEL 6 — Quote ── */
+.p6 {
+    background: var(--cream);
+    flex-direction: column;
+    gap: 2rem;
+}
 
-.p4 blockquote {
+.p6 blockquote {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(36px, 5vw, 72px);
-    line-height: 1.05;
+    line-height: 1.1;
     color: var(--bg);
     max-width: 700px;
     text-align: center;
 }
 
-.p4 blockquote span { color: var(--rust); }
+.p6 blockquote span {
+    color: var(--rust);
+}
 
-.p4 cite {
+.p6 cite {
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -449,100 +272,492 @@ body {
     font-style: normal;
 }
 
-/* ── PANEL 5 — CTA ── */
-.p5 { background: var(--bg); flex-direction: column; gap: 2.5rem; }
-
-.p5 .big {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(60px, 10vw, 140px);
-    line-height: 0.95;
-    text-align: center;
-    color: var(--cream);
+/* ── PANEL 7 — Puzzle CTA ── */
+.p7 {
+    background: var(--bg);
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
-.p5 .big span { color: var(--rust); }
-
-.p5 .cta-btn {
-    display: inline-block;
-    border: 1px solid rgba(245,240,232,0.3);
-    padding: 14px 40px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--cream);
-    transition: background 0.2s, border-color 0.2s;
-}
-
-.p5 .cta-btn:hover {
-    background: var(--rust);
-    border-color: var(--rust);
-}
-
-.p5 .bg-grid {
+.p7 .bg-grid {
     position: absolute;
     inset: 0;
     background-image:
             linear-gradient(rgba(245,240,232,0.03) 1px, transparent 1px),
             linear-gradient(90deg, rgba(245,240,232,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
+    z-index: 0;
 }
 
-/* ── TABLET (≤ 768px) ── */
+.p7 .intro-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 600px;
+    padding: 0 2rem;
+}
+
+.p7 .intro-inner h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 140px);
+    line-height: 0.95;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+}
+
+.p7 .intro-inner h2 span {
+    color: var(--rust);
+}
+
+.p7 .intro-inner .how-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1.2rem;
+}
+
+.p7 .intro-inner p {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    line-height: 2;
+    color: rgba(245,240,232,0.45);
+    margin-bottom: 0.8rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--rust);
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 16px 44px;
+    cursor: pointer;
+    border: none;
+    margin-top: 1.5rem;
+    transition: background 0.2s;
+}
+
+.cta-btn:hover {
+    background:var(--rust);
+}
+
+/* ── PANEL 8 — Game Item ── */
+.p8 {
+    background: var(--dark);
+    flex-direction: column;
+    gap: 0;
+}
+
+.game-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    padding: 0 2rem;
+    gap: 2rem;
+}
+
+.item-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--rust);
+}
+
+.item-sentence {
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(14px, 1.6vw, 18px);
+    line-height: 1.9;
+    color: var(--cream);
+    max-width: 560px;
+}
+
+.item-sentence strong {
+    color: var(--cream);
+    font-style: italic;
+}
+
+.item-illo {
+    width: 220px;
+    height: 220px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+
+.item-illo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+}
+
+.item-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.item-nav button {
+    background: none;
+    border: 1px solid rgba(245,240,232,0.2);
+    color: var(--cream);
+    font-family: 'DM Mono', monospace;
+    font-size: 18px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-nav button:hover:not(:disabled) {
+    border-color: var(--rust);
+    color: var(--rust);
+}
+
+.item-nav button:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+.item-counter {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.3);
+}
+
+.progress-dots {
+    display: flex;
+    gap: 6px;
+    margin-top: 0.5rem;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(245,240,232,0.15);
+    transition: background 0.2s;
+}
+
+.dot.active {
+    background: var(--rust);
+}
+
+/* ── PANEL 9 — End of List ── */
+.p9 {
+    background: var(--bg);
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.p9 .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+            linear-gradient(rgba(245,240,232,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,240,232,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+}
+
+.p9 .end-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 560px;
+    padding: 0 2rem;
+}
+
+.p9 .end-inner .tag {
+    margin-bottom: 1.5rem;
+}
+
+.p9 .end-inner p {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    line-height: 2.1;
+    color: rgba(245,240,232,0.45);
+    margin-bottom: 0.75rem;
+}
+
+/* ── PANEL 10 — Quiz ── */
+.p10 {
+    background: var(--dark);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz-inner {
+    width: min(900px, 90vw);
+    padding: 0 1rem;
+}
+
+.quiz-question {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 3vw, 38px);
+    color: var(--cream);
+    letter-spacing: 0.03em;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 1.5rem;
+    max-height: 52vh;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.quiz-grid::-webkit-scrollbar {
+    width: 3px;
+}
+
+.quiz-grid::-webkit-scrollbar-thumb {
+    background: rgba(245,240,232,0.15);
+}
+
+.quiz-item {
+    border: 1px solid rgba(245,240,232,0.12);
+    padding: 10px 4px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: rgba(245,240,232,0.55);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    user-select: none;
+}
+
+.quiz-item:hover {
+    background: rgba(245,240,232,0.06);
+    border-color: rgba(245,240,232,0.25);
+}
+
+.quiz-item.selected {
+    background: var(--rust);
+    color: #fff;
+    border-color: var(--rust);
+}
+
+.quiz-item.correct {
+    background: var(--rust);
+    color: #fff;
+    border-color: var(--rust);
+}
+
+.quiz-item.wrong {
+    background: var(--rust);
+    color: #fff;
+    border-color: var(--rust);
+}
+
+.quiz-item.missed {
+    background: rgba(245,240,232,0.15);
+    color: rgba(245,240,232,0.5);
+    border-color: rgba(245,240,232,0.2);
+}
+
+.choose-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rust);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* ── PANEL 11 — Results ── */
+.p11 {
+    background: var(--bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.results-inner {
+    width: min(700px, 90vw);
+    padding: 0 1rem;
+}
+
+.results-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    color: var(--rust);
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.chart-wrap {
+    margin-bottom: 2rem;
+}
+
+.chart-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.25);
+    margin-bottom: 0.75rem;
+}
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 100px;
+    border-bottom: 1px solid rgba(245,240,232,0.1);
+    padding-bottom: 4px;
+}
+
+.bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex: 1;
+}
+
+.bar-pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: rgba(245,240,232,0.3);
+}
+
+.bar {
+    width: 100%;
+    background: rgba(245,240,232,0.1);
+    border-radius: 2px 2px 0 0;
+}
+
+.bar.you {
+    background: var(--rust);
+}
+
+.bar-x-row {
+    display: flex;
+    gap: 5px;
+    margin-top: 4px;
+}
+
+.bar-x-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.bar-x {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: rgba(245,240,232,0.3);
+}
+
+.you-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--rust);
+    font-weight: bold;
+}
+
+.results-body {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    line-height: 2;
+    color: rgba(245,240,232,0.45);
+    text-align: center;
+}
+
+.results-body p {
+    margin-bottom: 0.75rem;
+}
+
+.results-body strong {
+    color: var(--cream);
+}
+
+.play-again {
+    display: inline-block;
+    margin-top: 1.5rem;
+    border: 1px solid rgba(245,240,232,0.2);
+    padding: 12px 36px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cream);
+    cursor: pointer;
+    background: none;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.play-again:hover {
+    background: var(--rust);
+    border-color: var(--rust);
+}
+
+/* ── Responsive ── */
 @media (max-width: 768px) {
     #hint { display: none; }
 
-    /* Panel 1 */
-    .p1 h1 { font-size: clamp(60px, 18vw, 120px); }
+    .p1 h1 { font-size: 80px; }
 
-    /* Panel 2 — stack steps vertically */
-    .p2 { gap: 2rem; padding: 2rem; }
-    .p2 .steps { flex-direction: column; gap: 2rem; }
-    .p2 .step { max-width: 100%; }
-    .p2 .step-num { font-size: 48px; }
+    .p2 { padding: 0 2rem; gap: 2rem; }
+    .p2 .explain { font-size: 12px; }
 
-    /* Panel 3 — stack stats vertically */
-    .p3 .stats { flex-direction: column; gap: 1.5rem; align-items: center; }
-    .p3 .divider { width: 60px; height: 1px; }
-    .p3 .stat { text-align: center; }
-    .p3 .stat-num { font-size: clamp(48px, 12vw, 80px); }
+    .steps { flex-direction: column; gap: 2rem; align-items: center; }
+    .step { max-width: 100%; }
+    .step-num { font-size: 48px; }
 
-    /* Panel 4 */
-    .p4 blockquote { font-size: clamp(28px, 7vw, 48px); padding: 0 1.5rem; }
+    .p5 .stats { flex-direction: column; gap: 1.5rem; }
+    .p5 .divider { width: 60px; height: 1px; }
 
-    /* Panel 5 */
-    .p5 .big { font-size: clamp(48px, 14vw, 100px); }
-    .p5 .cta-btn { padding: 12px 28px; font-size: 10px; }
+    .p6 blockquote { font-size: clamp(28px, 7vw, 48px); padding: 0 1.5rem; }
+
+    .quiz-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ── MOBILE (≤ 480px) ── */
 @media (max-width: 480px) {
-    /* Panel 1 */
-    .p1 h1 { font-size: clamp(52px, 20vw, 90px); }
-    .p1 .sub { font-size: 11px; margin-top: 1.25rem; }
+    .p1 h1 { font-size: 60px; }
+    .p1 .sub { font-size: 11px; }
 
-    /* Panel 2 */
-    .p2 { padding: 1.5rem; gap: 1.5rem; }
-    .p2 .steps { gap: 1.5rem; }
-    .p2 .step-num { font-size: 40px; }
-    .p2 .step-title { font-size: 11px; }
-    .p2 .step-desc { font-size: 11px; }
+    .p2 .method-name { font-size: 18px; }
+    .p2 .explain { font-size: 11px; line-height: 1.9; }
 
-    /* Panel 3 */
-    .p3 { gap: 1.5rem; }
-    .p3 .stats { gap: 1.25rem; }
-    .p3 .stat-num { font-size: clamp(42px, 14vw, 72px); }
-    .p3 .stat-label { font-size: 10px; letter-spacing: 0.12em; }
+    .step-num { font-size: 40px; }
+    .step-title { font-size: 11px; }
+    .step-desc { font-size: 11px; }
 
-    /* Panel 4 */
-    .p4 blockquote { font-size: clamp(24px, 8vw, 40px); padding: 0 1rem; }
-    .p4 cite { font-size: 10px; letter-spacing: 0.2em; }
+    .p5 .stat-num { font-size: clamp(42px, 14vw, 72px); }
+    .p5 .stat-label { font-size: 10px; }
 
-    /* Panel 5 */
-    .p5 { gap: 2rem; }
-    .p5 .big { font-size: clamp(42px, 16vw, 80px); }
-    .p5 .cta-btn { padding: 12px 24px; letter-spacing: 0.2em; }
+    .p6 blockquote { font-size: clamp(24px, 8vw, 40px); padding: 0 1rem; }
+    .p6 cite { font-size: 10px; }
 
-    /* Counter */
+    .p7 .intro-inner h2 { font-size: clamp(42px, 16vw, 80px); }
+
+    .quiz-grid { grid-template-columns: repeat(3, 1fr); }
+
     #counter { font-size: 10px; right: 16px; bottom: 14px; }
 }

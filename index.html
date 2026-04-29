@@ -9,16 +9,10 @@
 </head>
 <body>
 
-<!-- Progress bar -->
 <div id="progress"></div>
-
-<!-- Panel counter -->
-<div id="counter">01 / 05</div>
-
-<!-- Scroll hint -->
+<div id="counter">01 / 11</div>
 <div id="hint">scroll or use arrow keys →</div>
 
-<!-- Horizontal panels wrapper -->
 <div class="wrapper" id="wrapper">
 
     <!-- Panel 1: Hero -->
@@ -29,30 +23,61 @@
         </div>
     </section>
 
-    <!-- Panel 2: How It Works -->
+    <!-- Panel 2: What is it? -->
     <section class="panel p2">
+        <div class="tag">What is it?</div>
+        <div class="definition-block">
+            <p class="method-name">Memory Palace — AKA The Loci Method</p>
+            <p class="explain">A mnemonic technique using spatial memory to organize and recall information by mentally placing items in familiar locations. It dates back to ancient Greece, traditionally attributed to the poet Simonides of Ceos, who discovered the technique after surviving a collapsed banquet hall and realizing he could recall the guests by remembering where they were seated. Later, Roman orators like Cicero and Quintilian used and taught it as a core tool for delivering long speeches from memory without notes.</p>
+        </div>
+    </section>
+
+    <!-- Panel 3: How it works -->
+    <section class="panel p3">
         <div class="label">How it works</div>
         <div class="steps">
             <div class="step">
                 <div class="step-num">01</div>
-                <div class="step-title">Build</div>
-                <p class="step-desc">Create a mental map by linking concepts to vivid locations in your mind.</p>
+                <div class="step-title">The Palace</div>
+                <p class="step-desc">Choose a familiar place you can clearly visualize, like your home or a route you know well.</p>
             </div>
             <div class="step">
                 <div class="step-num">02</div>
-                <div class="step-title">Anchor</div>
-                <p class="step-desc">Attach each idea to a specific room, object, or landmark you know well.</p>
+                <div class="step-title">The Association</div>
+                <p class="step-desc">Turn each piece of information into a vivid image and place it in specific spots along that place.</p>
             </div>
             <div class="step">
                 <div class="step-num">03</div>
-                <div class="step-title">Recall</div>
-                <p class="step-desc">Walk through your palace mentally and retrieve each memory with precision.</p>
+                <div class="step-title">The Visit</div>
+                <p class="step-desc">Mentally walk through the location to trigger each image and recall the information in order.</p>
             </div>
         </div>
     </section>
 
-    <!-- Panel 3: Stats -->
-    <section class="panel p3">
+    <!-- Panel 4: Pro tips -->
+    <section class="panel p4">
+        <div class="label">Pro tips</div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-title">Be Absurd</div>
+                <p class="step-desc">The weirder and more exaggerated the image, the more memorable it becomes. Don't be logical.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-title">Use Senses</div>
+                <p class="step-desc">Add smell, sound, and texture to each image. Multi-sensory encoding deepens the memory trace.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-title">Revisit Often</div>
+                <p class="step-desc">Walk through your palace daily for the first week. Spaced repetition cements long-term retention.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel 5: Stats -->
+    <section class="panel p5">
         <div class="tag">The science</div>
         <div class="stats">
             <div class="stat">
@@ -72,19 +97,64 @@
         </div>
     </section>
 
-    <!-- Panel 4: Quote -->
-    <section class="panel p4">
+    <!-- Panel 6: Quote -->
+    <section class="panel p6">
         <blockquote>
             "The mind is not a vessel<br>to be filled, but a <span>fire</span><br>to be kindled."
         </blockquote>
         <cite>— Plutarch</cite>
     </section>
 
-    <!-- Panel 5: CTA -->
-    <section class="panel p5">
+    <!-- Panel 7: Puzzle CTA -->
+    <section class="panel p7">
         <div class="bg-grid"></div>
-        <div class="big">Start your<br><span>Palace.</span></div>
-        <div class="cta-btn">Begin the journey</div>
+        <div class="intro-inner">
+            <h2>Test your<br><span>Palace.</span></h2>
+            <div class="how-label">How to play</div>
+            <p>Memorize a 10-item shopping list using the memory palace technique. We'll pair each item with a location in a home.</p>
+            <p>Try to vividly picture each item in that exact spot. The stranger, the better.</p>
+            <button class="cta-btn" onclick="startGame()">Let's play</button>
+        </div>
+    </section>
+
+    <!-- Panel 8: Game Item (content injected by JS) -->
+    <section class="panel p8">
+        <div class="game-inner" id="game-inner"></div>
+    </section>
+
+    <!-- Panel 9: End of List -->
+    <section class="panel p9">
+        <div class="end-inner">
+            <div class="tag" style="margin-bottom:1.5rem;">That's your list.</div>
+            <p>Take a few moments to burn these images and locations into your mind. Feel free to scroll back through the items.</p>
+            <p>Adding motion, sounds, smells and tactile sense to your imagined scenes may help you remember them.</p>
+            <p>When you're ready, keep scrolling.</p>
+        </div>
+    </section>
+
+    <!-- Panel 10: Quiz -->
+    <section class="panel p10" id="quiz-panel">
+        <div class="quiz-inner">
+            <p class="quiz-question">What are the 10 items you need to buy?</p>
+            <div class="quiz-grid" id="quiz-grid"></div>
+            <div class="choose-label" id="choose-label">Choose an item to begin.</div>
+        </div>
+    </section>
+
+    <!-- Panel 11: Results -->
+    <section class="panel p11">
+        <div class="results-inner">
+            <p class="results-headline" id="results-headline">You remembered 0 / 10.</p>
+            <div class="chart-wrap">
+                <div class="chart-label">Correct answers — reader distribution</div>
+                <div class="bar-chart" id="bar-chart"></div>
+                <div class="bar-x-row" id="bar-x-row"></div>
+            </div>
+            <div class="results-body" id="results-body"></div>
+            <div style="text-align:center">
+                <button class="play-again" onclick="resetGame()">Play again</button>
+            </div>
+        </div>
     </section>
 
 </div>
