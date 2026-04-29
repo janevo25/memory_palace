@@ -85,7 +85,7 @@ const ITEMS = [
 
 const SENTENCES = {
     "coffee":       `As you reach to turn off the <strong>alarm</strong>, you find <strong>coffee</strong> spilling out of it.`,
-    "diapers":      `You step onto the <strong>floor</strong> and slip on a pile of <strong>diapers</strong>.`,
+    "diapers":      `You walk onto the <strong>floor</strong> and step on an <strong>orange</strong>.`,
     "almonds":      `You switch on the <strong>light</strong> and <strong>almonds</strong> rain down from the bulb.`,
     "garbage bags": `You glance at the <strong>window</strong> and see it wrapped in black <strong>garbage bags</strong>.`,
     "batteries":    `You walk into the <strong>bathroom</strong> and the whole room is packed with <strong>batteries</strong>.`,
