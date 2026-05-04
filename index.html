@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Memory Palace</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
@@ -9,154 +9,319 @@
 </head>
 <body>
 
-<div id="progress"></div>
-<div id="counter">01 / 11</div>
-<div id="hint">scroll or use arrow keys →</div>
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logo">Memory Palace</div>
+    <div class="nav-links">
+        <a href="#intro">What is it</a>
+        <a href="#how">How it works</a>
+        <a href="#brain">The brain</a>
+        <a href="#play">Play</a>
+    </div>
+</nav>
 
-<div class="wrapper" id="wrapper">
+<!-- HERO -->
+<section class="hero" id="intro">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-inner">
+        <p class="hero-tag">Ancient technique · Modern science</p>
+        <h1 class="hero-title">Memory<br><span>Palace</span></h1>
+        <p class="hero-sub">A 2,500-year-old method used by Greek orators, Roman senators, and today's memory champions. Learn how it hijacks your brain — then try it yourself.</p>
+        <a href="#how" class="hero-btn">Explore the method ↓</a>
+    </div>
+</section>
 
-    <!-- Panel 1: Hero -->
-    <section class="panel p1">
-        <div class="content">
-            <h1>Memory<br><span>Palace</span></h1>
-            <p class="sub">Learn / Play / Test</p>
+<!-- WHAT IS IT -->
+<section class="txt-section" id="what">
+    <div class="txt-inner">
+        <div class="s-tag">What is it?</div>
+        <h2>The Loci Method</h2>
+        <p>A mnemonic technique that uses <strong>spatial memory</strong> to organize and recall information by mentally placing items in familiar locations along a known route or space.</p>
+        <p>It dates back to ancient Greece, traditionally attributed to the poet <strong>Simonides of Ceos</strong>, who survived a collapsed banquet hall and realized he could identify each victim by remembering exactly where they had been seated.</p>
+        <p>Later, Roman orators like Cicero and Quintilian used and taught it as the core tool for delivering long speeches from memory — without notes.</p>
+        <div class="quote-block">
+            <blockquote>"The mind is not a vessel to be filled, but a <em>fire</em> to be kindled."</blockquote>
+            <cite>— Plutarch</cite>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Panel 2: What is it? -->
-    <section class="panel p2">
-        <div class="tag">What is it?</div>
-        <div class="definition-block">
-            <p class="method-name">Memory Palace — AKA The Loci Method</p>
-            <p class="explain">A mnemonic technique using spatial memory to organize and recall information by mentally placing items in familiar locations. It dates back to ancient Greece, traditionally attributed to the poet Simonides of Ceos, who discovered the technique after surviving a collapsed banquet hall and realizing he could recall the guests by remembering where they were seated. Later, Roman orators like Cicero and Quintilian used and taught it as a core tool for delivering long speeches from memory without notes.</p>
-        </div>
-    </section>
-
-    <!-- Panel 3: How it works -->
-    <section class="panel p3">
-        <div class="label">How it works</div>
-        <div class="steps">
-            <div class="step">
-                <div class="step-num">01</div>
-                <div class="step-title">The Palace</div>
-                <p class="step-desc">Choose a familiar place you can clearly visualize, like your home or a route you know well.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">02</div>
-                <div class="step-title">The Association</div>
-                <p class="step-desc">Turn each piece of information into a vivid image and place it in specific spots along that place.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">03</div>
-                <div class="step-title">The Visit</div>
-                <p class="step-desc">Mentally walk through the location to trigger each image and recall the information in order.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Panel 4: Pro tips -->
-    <section class="panel p4">
-        <div class="label">Pro tips</div>
-        <div class="steps">
-            <div class="step">
-                <div class="step-num">01</div>
-                <div class="step-title">Be Absurd</div>
-                <p class="step-desc">The weirder and more exaggerated the image, the more memorable it becomes. Don't be logical.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">02</div>
-                <div class="step-title">Use Senses</div>
-                <p class="step-desc">Add smell, sound, and texture to each image. Multi-sensory encoding deepens the memory trace.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">03</div>
-                <div class="step-title">Revisit Often</div>
-                <p class="step-desc">Walk through your palace daily for the first week. Spaced repetition cements long-term retention.</p>
+<!-- HOW IT WORKS -->
+<section class="txt-section alt" id="how">
+    <div class="txt-inner">
+        <div class="s-tag">How it works</div>
+        <h2>Three steps</h2>
+        <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+                <div class="step-title">Choose your palace</div>
+                <p>Pick a place you know vividly — your home, your commute, your school. The more familiar, the better. Your brain has already mapped this space in extraordinary detail.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Panel 5: Stats -->
-    <section class="panel p5">
-        <div class="tag">The science</div>
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-num">6×</div>
-                <div class="stat-label">Better recall</div>
-            </div>
-            <div class="divider"></div>
-            <div class="stat">
-                <div class="stat-num">72h</div>
-                <div class="stat-label">Retention window</div>
-            </div>
-            <div class="divider"></div>
-            <div class="stat">
-                <div class="stat-num">98%</div>
-                <div class="stat-label">Memory champions use it</div>
+        <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+                <div class="step-title">Place vivid images</div>
+                <p>Convert each piece of information into a bizarre, exaggerated image. Place it at a specific spot along your route. The stranger the image, the stronger the encoding.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Panel 6: Quote -->
-    <section class="panel p6">
-        <blockquote>
-            "The mind is not a vessel<br>to be filled, but a <span>fire</span><br>to be kindled."
-        </blockquote>
-        <cite>— Plutarch</cite>
-    </section>
-
-    <!-- Panel 7: Puzzle CTA -->
-    <section class="panel p7">
-        <div class="bg-grid"></div>
-        <div class="intro-inner">
-            <h2>Test your<br><span>Palace.</span></h2>
-            <div class="how-label">How to play</div>
-            <p>Memorize a 10-item shopping list using the memory palace technique. We'll pair each item with a location in a home.</p>
-            <p>Try to vividly picture each item in that exact spot. The stranger, the better.</p>
-            <button class="cta-btn" onclick="startGame()">Let's play</button>
-        </div>
-    </section>
-
-    <!-- Panel 8: Game Item (content injected by JS) -->
-    <section class="panel p8">
-        <div class="game-inner" id="game-inner"></div>
-    </section>
-
-    <!-- Panel 9: End of List -->
-    <section class="panel p9">
-        <div class="end-inner">
-            <div class="tag" style="margin-bottom:1.5rem;">That's your list.</div>
-            <p>Take a few moments to burn these images and locations into your mind. Feel free to scroll back through the items.</p>
-            <p>Adding motion, sounds, smells and tactile sense to your imagined scenes may help you remember them.</p>
-            <p>When you're ready, keep scrolling.</p>
-        </div>
-    </section>
-
-    <!-- Panel 10: Quiz -->
-    <section class="panel p10" id="quiz-panel">
-        <div class="quiz-inner">
-            <p class="quiz-question">What are the 10 items you need to buy?</p>
-            <div class="quiz-grid" id="quiz-grid"></div>
-            <div class="choose-label" id="choose-label">Choose an item to begin.</div>
-        </div>
-    </section>
-
-    <!-- Panel 11: Results -->
-    <section class="panel p11">
-        <div class="results-inner">
-            <p class="results-headline" id="results-headline">You remembered 0 / 10.</p>
-            <div class="chart-wrap">
-                <div class="chart-label">Correct answers — reader distribution</div>
-                <div class="bar-chart" id="bar-chart"></div>
-                <div class="bar-x-row" id="bar-x-row"></div>
-            </div>
-            <div class="results-body" id="results-body"></div>
-            <div style="text-align:center">
-                <button class="play-again" onclick="resetGame()">Play again</button>
+        <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+                <div class="step-title">Walk and recall</div>
+                <p>To retrieve, mentally walk your palace in order. Each location acts as a trigger — the image appears, and with it, the information it encodes.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+<!-- BRAIN EXPLORABLE -->
+<section class="brain-section" id="brain">
+
+    <!-- LEFT: scrolling text blocks -->
+    <div class="brain-left">
+
+        <div class="brain-block" data-region="none">
+            <div class="s-tag">Inside the brain</div>
+            <h2>Why your brain loves this method</h2>
+            <p>The memory palace isn't a trick — it's a deliberate exploit of how your brain is already wired. Humans evolved as spatial navigators long before we needed to memorize lists. The palace hijacks that ancient circuitry.</p>
+            <p>Scroll to see which brain regions activate when you use the technique.</p>
+        </div>
+
+        <div class="brain-block" data-region="hippocampus">
+            <div class="region-chip c-rust">Hippocampus</div>
+            <h3>The palace builder</h3>
+            <p>Your hippocampus is your brain's GPS. It creates and navigates spatial maps — and fires just as strongly when you <em>imagine</em> a space as when you physically walk through it.</p>
+            <p>When you mentally place an image in your kitchen, your hippocampus encodes its location the same way it would a real memory of being there. Every item gets a spatial address.</p>
+            <div class="stat-row">
+                <div class="stat-pill"><span>2×</span> larger in frequent navigators</div>
+                <div class="stat-pill"><span>6×</span> better recall vs rote memory</div>
+            </div>
+        </div>
+
+        <div class="brain-block" data-region="visual">
+            <div class="region-chip c-rust">Visual Cortex</div>
+            <h3>The image amplifier</h3>
+            <p>When you vividly imagine a giant coffee cup erupting from your alarm clock, your visual cortex activates in nearly the same pattern as if you were actually seeing it.</p>
+            <p>This is why the technique demands absurd, vivid imagery. The more sensory detail — color, scale, motion, smell — the more neurons fire, and the stronger the trace left behind.</p>
+            <div class="stat-row">
+                <div class="stat-pill"><span>~90%</span> of the same neurons fire during vivid imagination</div>
+            </div>
+        </div>
+
+        <div class="brain-block" data-region="prefrontal">
+            <div class="region-chip c-rust">Prefrontal Cortex</div>
+            <h3>The association maker</h3>
+            <p>The prefrontal cortex handles deliberate, effortful encoding — building the bridge between an abstract fact and a concrete, bizarre mental image.</p>
+            <p>This deliberate effort is actually a feature, not a bug. The cognitive work of creating a weird association is what makes the memory durable. Shallow processing fades; the strange image sticks.</p>
+        </div>
+
+        <div class="brain-block" data-region="parahippo">
+            <div class="region-chip c-rust">Parahippocampal Cortex</div>
+            <h3>The context keeper</h3>
+            <p>Wrapping the hippocampus is the parahippocampal cortex — the region that processes scene and context. It's why stepping into a room can flood you with memories tied to that exact place.</p>
+            <p>The palace technique arms every memory with scene context. The location <em>is</em> the retrieval cue. Walk to the front door, and your brain reinstantiates the full scene.</p>
+        </div>
+
+        <div class="brain-block" data-region="none">
+            <div class="s-tag">The science</div>
+            <h2>It's not anecdote — it's MRI</h2>
+            <p>A 2017 study in <em>Neuron</em> (Dresler et al.) trained participants with the memory palace method for 40 days. Brain scans showed measurably stronger connectivity between the hippocampus, medial prefrontal cortex, and posterior cingulate — the same network used by elite memory champions.</p>
+            <div class="sci-stats">
+                <div class="sci-stat">
+                    <div class="sci-num">6×</div>
+                    <div class="sci-label">Better recall after training</div>
+                </div>
+                <div class="sci-stat">
+                    <div class="sci-num">40</div>
+                    <div class="sci-label">Days to build lasting results</div>
+                </div>
+                <div class="sci-stat">
+                    <div class="sci-num">98%</div>
+                    <div class="sci-label">Memory champions use it</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- RIGHT: sticky brain SVG -->
+    <div class="brain-right">
+        <div class="brain-sticky-wrap">
+            <div class="brain-active-label" id="brain-label">The brain at rest</div>
+            <svg id="brain-svg" viewBox="0 0 380 440" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="rglow" x="-40%" y="-40%" width="180%" height="180%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="b"/>
+                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                </defs>
+
+                <!-- Fill shape -->
+                <path class="b-fill" d="M190 38 C218 28,268 33,298 62 C332 96,342 136,332 170 C347 180,354 200,346 220 C356 235,354 260,338 272 C346 289,341 312,324 324 C316 344,295 356,276 354 C263 368,247 375,232 371 C225 385,213 391,200 387 C187 391,175 385,168 371 C153 375,137 368,124 354 C105 356,84 344,76 324 C59 312,54 289,62 272 C46 260,44 235,54 220 C46 200,53 180,68 170 C58 136,68 96,102 62 C132 33,162 26,190 38Z"/>
+
+                <!-- Folds -->
+                <g class="b-folds">
+                    <path d="M190 50 C204 74,208 104,198 138 C193 158,188 173,190 198"/>
+                    <path d="M118 76 C132 100,135 128,128 157 C123 176,118 190,123 214"/>
+                    <path d="M262 76 C248 100,245 128,252 157 C257 176,262 190,257 214"/>
+                    <path d="M143 90 C156 109,158 132,152 152"/>
+                    <path d="M237 90 C224 109,222 132,228 152"/>
+                    <path d="M68 184 C86 198,100 208,110 226 C117 240,117 254,112 268"/>
+                    <path d="M312 184 C294 198,280 208,270 226 C263 240,263 254,268 268"/>
+                    <path d="M153 50 C148 72,146 93,150 112"/>
+                    <path d="M227 50 C232 72,234 93,230 112"/>
+                    <path d="M130 314 C148 303,168 298,190 300"/>
+                    <path d="M250 314 C232 303,212 298,190 300"/>
+                    <path d="M110 340 C135 330,163 326,190 327 C217 326,245 330,270 340"/>
+                </g>
+
+                <!-- Midline -->
+                <path class="b-midline" d="M190 40 C192 115,190 195,190 387"/>
+
+                <!-- Brain stem -->
+                <path class="b-stem" d="M172 387 C170 404,172 418,176 426 C180 434,186 438,190 438 C194 438,200 434,204 426 C208 418,210 404,208 387"/>
+                <text class="b-stem-lbl" x="190" y="434" text-anchor="middle">brain stem</text>
+
+                <!-- Regions -->
+                <g class="b-region" id="r-hippocampus">
+                    <ellipse cx="158" cy="298" rx="44" ry="25" class="r-bg"/>
+                    <ellipse cx="158" cy="298" rx="44" ry="25" class="r-border"/>
+                    <text class="r-lbl" x="158" y="302" text-anchor="middle">hippocampus</text>
+                </g>
+                <g class="b-region" id="r-visual">
+                    <ellipse cx="190" cy="330" rx="52" ry="22" class="r-bg"/>
+                    <ellipse cx="190" cy="330" rx="52" ry="22" class="r-border"/>
+                    <text class="r-lbl" x="190" y="334" text-anchor="middle">visual cortex</text>
+                </g>
+                <g class="b-region" id="r-prefrontal">
+                    <ellipse cx="190" cy="94" rx="62" ry="40" class="r-bg"/>
+                    <ellipse cx="190" cy="94" rx="62" ry="40" class="r-border"/>
+                    <text class="r-lbl" x="190" y="91" text-anchor="middle">prefrontal</text>
+                    <text class="r-lbl" x="190" y="103" text-anchor="middle">cortex</text>
+                </g>
+                <g class="b-region" id="r-parahippo">
+                    <ellipse cx="226" cy="298" rx="44" ry="25" class="r-bg"/>
+                    <ellipse cx="226" cy="298" rx="44" ry="25" class="r-border"/>
+                    <text class="r-lbl" x="226" y="296" text-anchor="middle">parahippo-</text>
+                    <text class="r-lbl" x="226" y="307" text-anchor="middle">campal</text>
+                </g>
+
+                <!-- Neural paths -->
+                <g class="b-paths">
+                    <path id="np-hv" d="M158 273 C158 255,178 245,190 245 C202 245,204 285,190 308"/>
+                    <path id="np-vp" d="M190 308 C190 270,194 190,190 134"/>
+                    <path id="np-ph" d="M128 110 C106 148,102 218,116 273"/>
+                    <path id="np-pl" d="M226 273 C244 250,252 224,248 196 C244 172,236 152,240 126"/>
+                </g>
+
+                <!-- Sparks -->
+                <g class="b-sparks">
+                    <circle class="b-spark" cx="166" cy="172" r="2.5"/>
+                    <circle class="b-spark" cx="216" cy="190" r="2"/>
+                    <circle class="b-spark" cx="142" cy="230" r="2.5"/>
+                    <circle class="b-spark" cx="248" cy="146" r="2"/>
+                    <circle class="b-spark" cx="181" cy="256" r="2.5"/>
+                    <circle class="b-spark" cx="212" cy="226" r="2"/>
+                    <circle class="b-spark" cx="134" cy="180" r="2"/>
+                    <circle class="b-spark" cx="270" cy="232" r="2.5"/>
+                    <circle class="b-spark" cx="158" cy="138" r="2"/>
+                    <circle class="b-spark" cx="234" cy="266" r="2"/>
+                </g>
+            </svg>
+
+            <div class="brain-legend">
+                <button class="leg-item" data-r="hippocampus">Hippocampus</button>
+                <button class="leg-item" data-r="visual">Visual cortex</button>
+                <button class="leg-item" data-r="prefrontal">Prefrontal</button>
+                <button class="leg-item" data-r="parahippo">Parahippocampal</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- PRO TIPS -->
+<section class="txt-section" id="tips">
+    <div class="txt-inner">
+        <div class="s-tag">Pro tips</div>
+        <h2>Make it stick</h2>
+        <div class="tip-grid">
+            <div class="tip-card">
+                <div class="tip-num">01</div>
+                <div class="tip-title">Be absurd</div>
+                <p>The weirder and more exaggerated the image, the more memorable. Logic is forgettable. Absurdity is not.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-num">02</div>
+                <div class="tip-title">Use all senses</div>
+                <p>Add smell, sound, texture, and motion. Multi-sensory encoding fires more neurons — more signal, less forgetting.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-num">03</div>
+                <div class="tip-title">Revisit often</div>
+                <p>Walk through your palace daily for the first week. Spaced repetition converts short-term sparks into long-term structure.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-num">04</div>
+                <div class="tip-title">Use real spaces</div>
+                <p>Start with places you know cold — your childhood bedroom, your commute. Familiarity removes navigation overhead.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="play">
+    <div class="cta-grid-bg"></div>
+    <div class="cta-inner">
+        <div class="s-tag">Try it now</div>
+        <h2 class="cta-title">Test your<br><span>Palace.</span></h2>
+        <p>Memorize a 10-item shopping list using the memory palace method. Each item is paired with a vivid location in a house. Then prove you remember.</p>
+        <button class="cta-btn" onclick="launchGame()">Let's play</button>
+    </div>
+</section>
+
+<!-- GAME OVERLAY -->
+<div id="game-overlay" class="g-overlay hidden">
+    <button class="g-close" onclick="closeGame()">✕ close</button>
+
+    <div id="ph-study" class="g-phase">
+        <div class="s-tag" style="margin-bottom:1.5rem">Memorize</div>
+        <div id="game-display"></div>
+        <div class="g-item-nav">
+            <button onclick="prevItem()" id="btn-prev" disabled>←</button>
+            <span id="item-counter" class="g-counter">01 / 10</span>
+            <button onclick="nextItem()" id="btn-next">→</button>
+        </div>
+        <div id="g-dots" class="g-dots"></div>
+        <p class="g-hint">Visualize each image vividly in that location. The stranger the better.</p>
+    </div>
+
+    <div id="ph-ready" class="g-phase hidden">
+        <div class="s-tag" style="margin-bottom:1.5rem">Ready?</div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:48px;margin-bottom:1rem">That's your list.</h3>
+        <p style="color:rgba(245,240,232,0.5);font-size:13px;line-height:2;max-width:400px;text-align:center;margin:0 auto 2rem">Take a moment. Walk through the house in your mind and see each image in its place.</p>
+        <button class="cta-btn" onclick="startQuiz()">Test me</button>
+    </div>
+
+    <div id="ph-quiz" class="g-phase hidden">
+        <div class="s-tag" style="margin-bottom:1.5rem">Recall</div>
+        <p class="quiz-q">What are the 10 items on your list?</p>
+        <div class="quiz-grid" id="quiz-grid"></div>
+        <div class="choose-label" id="choose-label">Choose an item to begin.</div>
+    </div>
+
+    <div id="ph-results" class="g-phase hidden">
+        <p class="results-headline" id="results-headline">You remembered 0 / 10.</p>
+        <div class="chart-wrap">
+            <div class="chart-label">Correct answers — reader distribution</div>
+            <div class="bar-chart" id="bar-chart"></div>
+            <div class="bar-x-row" id="bar-x-row"></div>
+        </div>
+        <div class="results-body" id="results-body"></div>
+        <button class="cta-btn" onclick="resetGame()" style="margin-top:1.5rem">Play again</button>
+    </div>
 </div>
 
 <script src="main.js"></script>
